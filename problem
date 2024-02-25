@@ -1,0 +1,12 @@
+Sui is a DAG chain that also produces checkpoints for state synchronization.
+These checkpoints contain all finalized transactions.
+
+Build a rust program that tails the latest checkpoint, fetches the corresponding transactions,
+and publishes that data to a downstream consumer that parses balance changes for tracked addresses.
+Consider error-handling / retry around general http or rpc errors (e.g rate limits, spurious connection drops, etc)
+
+Also, for the purpose of an exchange integrating with Sui, consider what alternative approches exist:
+
+(1) Transaction and event subscription for 'fast-path' indexing
+(2) Balance queries by account `sui_getAllBalances`
+(3) Other that I haven't thought of!
